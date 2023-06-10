@@ -1,9 +1,6 @@
-name: NodeJS Github Action
-
 on: push  
-
 jobs:
- build:
+ build-node:
   run-on: windows-latest
    
   steps:
