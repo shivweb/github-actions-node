@@ -1,7 +1,7 @@
 on: push  
 jobs:
  build-node:
-  run-on: windows-latest
+  runs-on: windows-latest
    
   steps:
    - uses: actions/checkout@v3 # checkout the repository
