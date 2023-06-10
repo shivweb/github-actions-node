@@ -7,6 +7,6 @@ describe("/testNode endpoint", () => {
     it("should return a response", async () => {
         const response = await request.get("/testNode")
         expect(response.status).toBe(200)
-        expect(response.text).toBe(`Yes the testNode endpoint worked`)
+        expect(response.text).toBe(`Yes the testNode endpoint worked again`)
     })
 })
