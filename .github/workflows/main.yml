@@ -1,19 +1,32 @@
+# on: push
+# jobs:
+#   build-node:
+#     runs-on: ubuntu-latest
+#     container: 16
+#     steps:
+#       - run: node --version
+#       - run: npm --version
+#       - uses: actions/checkout@v3
+#       - run: npm install
+#       - run: node app.js 
+
+name: NodeJS Github Action
 on: push  
 jobs:
- build-node:
-  runs-on: windows-latest
-   
-  steps:
-   - run: actions/checkout@v3 # checkout the repository
-   - name: Use Node
+ build:
+  runs-on: ubuntu-latest
 
-   - run: actions/setup-node@v3
-     with: 
-          node-version: 16
-   - name: Install dependencies
-     run: npm install
-   - name: Run test
-     run: npm test         
+  steps:
+    - uses: actions/checkout@v3
+    - name: Use Node
+    - uses: actions/setup-node@v3
+    with: 
+      node-version: 18
+    - name: Install dependencies
+      run: npm install
+    - name: Run test
+      run: npm test
+
 
    
 

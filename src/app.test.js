@@ -1,12 +1,12 @@
-const app = require('./app');
+const app = require('./app')
 const supertest = require('supertest');
-const {describe} = require('jest-circus');
-const request = supertest(app);
+const {  describe, it } = require('jest-circus');
+const app = supertest(app);
 
-describe("/testNode endpoint", () => {
+describe('/testNode endpoint', () => {
     it("should return a response", async () => {
-        const response = await request.get("/testNode")
-        expect(response.status).toBe(200)
-        expect(response.text).toBe(`Yes the testNode endpoint worked again`)
-    })
-})
+       const response = await request.get("/testNode")
+       expect(response.status).toBe(200)
+       expect(response.text).toBe('Yes the testNode endpoint worked')
+    });
+});
